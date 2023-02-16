@@ -1,0 +1,14 @@
+npm init -y
+npm install typescript -D
+npx tsc --init
+npm install fastify
+npm install @types/node -D
+npm install tsx -D
+npm install eslint @rocketseat/eslint-config -D
+npm install dotenv
+npm install zod
+npm install @fastify/cookie
+
+npx tsc src/server.ts => converte a aplicação pra javascript
+npx tsx src/server.ts => converte a aplicação pra javascript e executa de forma mais automatizada  
+node src/server.js

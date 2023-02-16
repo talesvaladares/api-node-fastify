@@ -1,0 +1,7 @@
+npm install knex sqlite3
+criar o arquivo knexfile.ts na raiz do projeto
+criar um script knex dentro do package.json
+
+npm run knex -- migrate:make create-documents => precisa do -- espaço para o script entender que os parametros vão para o script do knex
+npm run knex -- migrate:latest 
+npm run knex -- migrate:rollback
