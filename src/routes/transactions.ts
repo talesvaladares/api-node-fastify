@@ -60,12 +60,12 @@ export async function transactionsRoutes(app: FastifyInstance) {
 
     const { id } = getTransactionParamsSchema.parse(request.params);
    
-    const transactions = await knex('transactions').where({
+    const transaction = await knex('transactions').where({
       id,
       session_id: sessionId
     }).first();
 
-    return {transactions};
+    return {transaction};
   });
 
   app.get('/summary', {preHandler: [checkSessionIdExists]},  async (request) => {
@@ -78,7 +78,7 @@ export async function transactionsRoutes(app: FastifyInstance) {
       .sum('amount', {as: 'amount'})
       .first();
 
-    return summary;
+    return { summary };
     
   });
 }

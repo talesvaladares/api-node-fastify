@@ -1,5 +1,14 @@
-import 'dotenv/config';
+import { config } from 'dotenv';
 import { z } from 'zod';
+
+//antes de instanciar as variaveis de ambiente verifico se estou no ambiente de testes
+//quando rodo testes, automaticamente dentro de NODE_ENV encontro o valor de test
+if (process.env.NODE_ENV === 'test') {
+  config({path: '.env.test'});
+}
+else {
+  config()
+}
 
 const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']).default('production'),

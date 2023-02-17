@@ -1,0 +1,5 @@
+npm install vitest
+npm install supertest -D
+npm install @types/supertest -D
+npx vitest
+criar um script de test no package.json
