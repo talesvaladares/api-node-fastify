@@ -1,3 +1,15 @@
 npm install tsup -D
 npm install pg
 criar escript build no package.json
+
+
+//script para ser rodado antes do deploy no servidor
+
+//build command
+npm install && npm run knex -- migrate:latest &&  npm run build &&
+
+//start command
+node build/server.js
+
+deploy foi feito no render.com
+mas não porque depois de 90 dias o banco iria deixar de ser free
