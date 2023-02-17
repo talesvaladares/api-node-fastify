@@ -1,0 +1,2 @@
+npm install tsup -D
+criar escript build no package.json
